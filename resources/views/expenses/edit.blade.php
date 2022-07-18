@@ -26,12 +26,13 @@
             @else
                 <a href="/expenses/pay/{{ $expense->id }}" class="btn_2 bg-blue mb-4" style="border: none; width: 100%;">Paga</a>
             @endif
-            <form action="/expenses" method="post">
+            <form action="/expenses/{{ $expense->id }}" method="post">
                 @csrf
                 @method('put')
                 <div class="mb-3">
                     <label for="title">Título</label>
                     <input type="title" class="form-control" name="title" value="{{ $expense->title }}">
+                    
                 </div>
                 <div class="mb-3">
                     <label for="value">Valor</label>
@@ -43,6 +44,14 @@
                 </div>
                 <button type="submit" class="btn_2 mb-3" style="border: none; width: 100%;">Enviar</button>
             </form>
+
+                <form action="/expense/{{ $expeses->id }}" method="delete">
+                    @csrf 
+                    @method('delete')
+                    <button type="submit" class="btn_2 mb-3 bg-red" style="border: none; width: 100%">Deletar</button>
+                </form>
+               
+            
         </div>
     </section>
 @endsection

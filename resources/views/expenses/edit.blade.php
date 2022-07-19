@@ -28,7 +28,7 @@
             @endif
             <form action="/expenses/{{ $expense->id }}" method="post">
                 @csrf
-                @method('put')
+                @method('PUT')
                 <div class="mb-3">
                     <label for="title">Título</label>
                     <input type="title" class="form-control" name="title" value="{{ $expense->title }}">
@@ -45,11 +45,11 @@
                 <button type="submit" class="btn_2 mb-3" style="border: none; width: 100%;">Enviar</button>
             </form>
 
-                <form action="/expense/{{ $expeses->id }}" method="delete">
-                    @csrf 
-                    @method('delete')
-                    <button type="submit" class="btn_2 mb-3 bg-red" style="border: none; width: 100%">Deletar</button>
-                </form>
+            <form action="/expenses/{{ $expense->id }}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn_2 mb-3 bg-red" style="border: none; width: 100%;">Deletar</button>
+        </form>
                
             
         </div>

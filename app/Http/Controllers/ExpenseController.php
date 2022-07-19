@@ -88,11 +88,13 @@ class ExpenseController extends Controller
             abort(403);
         }
 
-        $attributes = $request->only([
-            'name'
-        ]);
-
-        $expense->update($attributes);
+        $expense->update(
+            [
+                'title' => $request->title,
+                'value' => $request->value,
+                'due_date' => $request->due_date
+            ]
+        );
 
         return redirect('/dashboard')->with('success', 'Despesa editada com sucesso');
     }
@@ -142,9 +144,15 @@ class ExpenseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Expense $expense)
-    {
+    { 
+        $user = auth()->user();
+
+        if ($expense->user_id !== $user->id) {
+            abort(403);
+        }
+
         $expense->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'despesa Removida com sucesso');;
     }
 }

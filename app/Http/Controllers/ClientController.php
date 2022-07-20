@@ -98,10 +98,14 @@ class ClientController extends Controller
 
     public function show(Client $client)
     {
- 
 
+        $user = auth()->user();
+
+        $client = Client::orderBy('name', 'asc')->get();
+
+        
         return response()->json(
-         Client::find($client)
+         $client
              
         );         
     }  

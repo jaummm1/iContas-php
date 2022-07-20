@@ -18,11 +18,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="phone">Numero de Telefone</label>
-                    <input type="number" class="form-control" name="phone" placeholder="Numero do telefone" step=".01">
+                    <input type="text" class="form-control" name="phone" placeholder="Numero do telefone" step=".01">
                 </div>
                 <div class="mb-3">
                     <label for="id_number">ddd</label>
-                    <input type="number" class="form-control" name="id_number" placeholder="ddd" step=".01">
+                    <input type="text" class="form-control" name="id_number" placeholder="ddd" step=".01">
                 </div>
                 <button type="submit" class="btn_2 mb-3" style="border: none; width: 100%;">Enviar</button>
             </form>

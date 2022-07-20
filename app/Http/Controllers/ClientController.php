@@ -101,7 +101,7 @@ class ClientController extends Controller
  
 
         return response()->json(
-            $client = Client::find($client)
+         Client::find($client)
              
         );         
     }  

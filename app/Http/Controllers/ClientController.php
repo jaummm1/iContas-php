@@ -101,7 +101,9 @@ class ClientController extends Controller
 
         $user = auth()->user();
 
-        $client = Client::orderBy('name', 'asc')->get();
+        $client = Client::orderBy('name', 'asc')
+        ->limit(2)
+        ->get();
 
         
         return response()->json(

@@ -98,14 +98,14 @@ class ClientController extends Controller
 
     public function show( Client $client )
     {
-
-        $client = Client::find($client);
+        $result = $client;
+        Client::where('id', '=', $result)->get();
 
         
-        return response()->json([
-         $client
+        return response()->json(
+         $result
              
-        ]);         
+        );         
     }  
  
  

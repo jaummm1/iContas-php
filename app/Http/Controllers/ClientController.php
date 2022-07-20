@@ -98,12 +98,12 @@ class ClientController extends Controller
 
     public function show(  $name )
     {
-        $result = $name;
-        $resulta = Client::where('name', 'like', $result)->get();
+        $resulta = $name;
+        $result = Client::where('name', 'LIKE', $name)->get();
 
         
         return response()->json(
-         $resulta
+         $result
              
         );         
     }  

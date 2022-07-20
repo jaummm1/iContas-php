@@ -266,5 +266,6 @@
         <script src="{{ asset('js/landing/jquery-1.12.1.min.js') }}"></script>
         <!-- custom js -->
         <script src="{{ asset('js/landing/custom.js') }}"></script>
+        
     </body>
 </html>

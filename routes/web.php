@@ -21,7 +21,12 @@ use App\Models\Expense;
 
     Route::get('/dashboard', [ClientController::class, 'index'])->name('dashboard');
     Route::get('/expenses/create', [ClientController::class, 'create'])->name('expenses.create');
+
+
+
     Route::post('/clients/store', [ClientController::class, 'store'])->name('expenses.store');
+    Route::get('/clients/show/{client}', [ClientController::class, 'show']);
+
     
     Route::get('/expenses/edit/{expense}', [ClientController::class, 'edit'])->name('expenses.edit');
     Route::put('/expenses/{expense}', [ClientController::class, 'update'])->name('expenses.update');

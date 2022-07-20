@@ -96,6 +96,19 @@ class ClientController extends Controller
         return redirect('/dashboard')->with('success', 'Despesa editada com sucesso');
     }
 
+    public function show(Client $client)
+    {
+ 
+
+        return response()->json([
+            $client = Client::find($client),
+            200 
+        ]);         
+    }  
+ 
+ 
+
+
 
     /**
      * Remove the specified resource from storage.

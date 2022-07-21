@@ -100,12 +100,10 @@ class ClientController extends Controller
     {
         
 
-        $result = Client::where('name', 'like', $name)
-        ->get();
+        $name = Client::where('name', '=', $name)
+        ->fist();
     
-        return  $result;
-             
-              
+        return  $name;       
     }  
  
  

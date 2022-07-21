@@ -96,14 +96,13 @@ class ClientController extends Controller
         return redirect('/dashboard')->with('success', 'Despesa editada com sucesso');
     }
 
-    public function show(  $name )
+    public function show(  $text )
     {
         
 
-        $name = Client::where('name', '=', $name)
-        ->first();
+        $text = Client::where('name', 'like', "%$text%")->get();
     
-        return  $name;       
+        return  $text;       
     }  
  
  

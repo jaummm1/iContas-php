@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bill;
 use App\Models\Client;
 use App\Models\Expense;
 use Illuminate\Http\Request;
@@ -96,13 +97,11 @@ class ClientController extends Controller
         return redirect('/dashboard')->with('success', 'Despesa editada com sucesso');
     }
 
-    public function show(  $text )
+    public function show(  $client )
     {
-        
-
-        $text = Client::where('name', 'like', "%$text%")->get();
+        $clients = Bill::where('client_id', '=', $client)->get();
     
-        return  $text;       
+        return  $clients;       
     }  
  
  

@@ -101,7 +101,7 @@ class ClientController extends Controller
         
 
         $name = Client::where('name', '=', $name)
-        ->fist();
+        ->first();
     
         return  $name;       
     }  

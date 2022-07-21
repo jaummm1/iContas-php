@@ -97,9 +97,11 @@ class ClientController extends Controller
         return redirect('/dashboard')->with('success', 'Despesa editada com sucesso');
     }
 
-    public function show(  $value )
+    public function show(  $value1, $value2 )
     {
-        $value = Bill::where('value', '>', $value)->get();
+        $value = Bill::where('value', '>', $value1)
+        ->where('value', '<', $value2)
+        ->get();
     
         return  $value;       
     }  

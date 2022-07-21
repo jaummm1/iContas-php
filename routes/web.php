@@ -25,7 +25,7 @@ use App\Models\Expense;
 
 
     Route::post('/clients/store', [ClientController::class, 'store'])->name('expenses.store');
-    Route::get('/bills/expensive/{value}', [ClientController::class, 'show']);
+    Route::get('/bills/between/{value1}/{value2}', [ClientController::class, 'show']);
 
     
     Route::get('/expenses/edit/{expense}', [ClientController::class, 'edit'])->name('expenses.edit');
